@@ -1,0 +1,226 @@
+[
+  {
+    "raw_file": "01_dart_veyder.md",
+    "original_term": "Дарт Вейдер",
+    "new_file": "01_ksarn_velgor.md",
+    "new_term": "Ксарн Велгор",
+    "replacements_made": 8
+  },
+  {
+    "raw_file": "02_lyuk_skayuoker.md",
+    "original_term": "Люк Скайуокер",
+    "new_file": "02_deyn_koriel.md",
+    "new_term": "Дэйн Кориэл",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "03_printsessa_leya.md",
+    "original_term": "Принцесса Лея",
+    "new_file": "03_princessa_mira_alten.md",
+    "new_term": "Принцесса Мира Альтен",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "04_han_solo.md",
+    "original_term": "Хан Соло",
+    "new_file": "04_reks_dorian.md",
+    "new_term": "Рекс Дориан",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "05_obi_van_kenobi.md",
+    "original_term": "Оби-Ван Кеноби",
+    "new_file": "05_master_terin_aykos.md",
+    "new_term": "Мастер Тэрин Айкос",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "06_yoda.md",
+    "original_term": "Йода",
+    "new_file": "06_mudrec_zen_oray.md",
+    "new_term": "Мудрец Зен Орай",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "07_imperator_palpatin.md",
+    "original_term": "Император Палпатин",
+    "new_file": "07_imperator_draks_moler.md",
+    "new_term": "Император Дракс Молер",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "08_chubakka.md",
+    "original_term": "Чубакка",
+    "new_file": "08_horrak.md",
+    "new_term": "Хоррак",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "09_dart_mol.md",
+    "original_term": "Дарт Мол",
+    "new_file": "09_ksevor_tan.md",
+    "new_term": "Ксевор Тан",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "10_meys_vindu.md",
+    "original_term": "Мейс Винду",
+    "new_file": "10_master_kadan_iris.md",
+    "new_term": "Мастер Кадан Ирис",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "11_tatuin.md",
+    "original_term": "Татуин",
+    "new_file": "11_dyunar.md",
+    "new_term": "Дюнар",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "12_nabu.md",
+    "original_term": "Набу",
+    "new_file": "12_veloriya.md",
+    "new_term": "Велория",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "13_korusant.md",
+    "original_term": "Корусант",
+    "new_file": "13_centralis.md",
+    "new_term": "Централис",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "14_khot.md",
+    "original_term": "Хот",
+    "new_file": "14_krionis.md",
+    "new_term": "Крионис",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "15_endor.md",
+    "original_term": "Эндор",
+    "new_file": "15_silvana.md",
+    "new_term": "Сильвана",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "16_dagoba.md",
+    "original_term": "Дагоба",
+    "new_file": "16_moroan.md",
+    "new_term": "Мороан",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "17_alderaan.md",
+    "original_term": "Алдераан",
+    "new_file": "17_asterra.md",
+    "new_term": "Астерра",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "18_zvezda_smerti.md",
+    "original_term": "Звезда Смерти",
+    "new_file": "18_voyd_yadro.md",
+    "new_term": "Войд-Ядро",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "19_svetovoy_mech.md",
+    "original_term": "Световой меч",
+    "new_file": "19_plazmennyy_klinok.md",
+    "new_term": "Плазменный клинок",
+    "replacements_made": 6
+  },
+  {
+    "raw_file": "20_tysyachiletniy_sokol.md",
+    "original_term": "Тысячелетний сокол",
+    "new_file": "20_strannik_tysyacheletiya.md",
+    "new_term": "Странник Тысячелетия",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "21_sila.md",
+    "original_term": "Сила",
+    "new_file": "21_sint_potok.md",
+    "new_term": "Синт-Поток",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "22_droid_r2d2.md",
+    "original_term": "R2-D2",
+    "new_file": "22_droid_t2_d9.md",
+    "new_term": "Дроид Т2-Д9",
+    "replacements_made": 2
+  },
+  {
+    "raw_file": "23_droid_c3po.md",
+    "original_term": "C-3PO",
+    "new_file": "23_droid_s4_po.md",
+    "new_term": "Дроид С4-ПО",
+    "replacements_made": 2
+  },
+  {
+    "raw_file": "24_blaster.md",
+    "original_term": "Бластер",
+    "new_file": "24_impulsnik.md",
+    "new_term": "Импульсник",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "25_dzhedai.md",
+    "original_term": "Джедаи",
+    "new_file": "25_hraniteli_potoka.md",
+    "new_term": "Хранители Потока",
+    "replacements_made": 2
+  },
+  {
+    "raw_file": "26_sithi.md",
+    "original_term": "Ситхи",
+    "new_file": "26_priverzhency_teni.md",
+    "new_term": "Приверженцы Тени",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "27_galakticheskaya_imperiya.md",
+    "original_term": "Галактическая Империя",
+    "new_file": "27_zvezdnaya_gegemoniya.md",
+    "new_term": "Звездная Гегемония",
+    "replacements_made": 3
+  },
+  {
+    "raw_file": "28_alyans_povstantsev.md",
+    "original_term": "Альянс повстанцев",
+    "new_file": "28_soyuz_svobodnyh_mirov.md",
+    "new_term": "Союз Свободных Миров",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "29_vuki.md",
+    "original_term": "Вуки",
+    "new_file": "29_tarviny.md",
+    "new_term": "Тарвины",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "30_bitva_pri_yavine.md",
+    "original_term": "Битва при Явине",
+    "new_file": "30_bitva_pri_yovene.md",
+    "new_term": "Битва при Йовене",
+    "replacements_made": 5
+  },
+  {
+    "raw_file": "31_klonicheskiye_voyny.md",
+    "original_term": "Клонические войны",
+    "new_file": "31_replika_voyny.md",
+    "new_term": "Реплика-войны",
+    "replacements_made": 4
+  },
+  {
+    "raw_file": "32_prikaz_66.md",
+    "original_term": "Приказ 66",
+    "new_file": "32_direktiva_66.md",
+    "new_term": "Директива 66",
+    "replacements_made": 5
+  }
+]

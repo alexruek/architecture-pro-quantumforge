@@ -1,0 +1,162 @@
+[
+  {
+    "file": "01_dart_veyder.md",
+    "term": "Дарт Вейдер",
+    "category": "персонаж"
+  },
+  {
+    "file": "02_lyuk_skayuoker.md",
+    "term": "Люк Скайуокер",
+    "category": "персонаж"
+  },
+  {
+    "file": "03_printsessa_leya.md",
+    "term": "Принцесса Лея",
+    "category": "персонаж"
+  },
+  {
+    "file": "04_han_solo.md",
+    "term": "Хан Соло",
+    "category": "персонаж"
+  },
+  {
+    "file": "05_obi_van_kenobi.md",
+    "term": "Оби-Ван Кеноби",
+    "category": "персонаж"
+  },
+  {
+    "file": "06_yoda.md",
+    "term": "Йода",
+    "category": "персонаж"
+  },
+  {
+    "file": "07_imperator_palpatin.md",
+    "term": "Император Палпатин",
+    "category": "персонаж"
+  },
+  {
+    "file": "08_chubakka.md",
+    "term": "Чубакка",
+    "category": "персонаж"
+  },
+  {
+    "file": "09_dart_mol.md",
+    "term": "Дарт Мол",
+    "category": "персонаж"
+  },
+  {
+    "file": "10_meys_vindu.md",
+    "term": "Мейс Винду",
+    "category": "персонаж"
+  },
+  {
+    "file": "11_tatuin.md",
+    "term": "Татуин",
+    "category": "планета"
+  },
+  {
+    "file": "12_nabu.md",
+    "term": "Набу",
+    "category": "планета"
+  },
+  {
+    "file": "13_korusant.md",
+    "term": "Корусант",
+    "category": "планета"
+  },
+  {
+    "file": "14_khot.md",
+    "term": "Хот",
+    "category": "планета"
+  },
+  {
+    "file": "15_endor.md",
+    "term": "Эндор",
+    "category": "планета"
+  },
+  {
+    "file": "16_dagoba.md",
+    "term": "Дагоба",
+    "category": "планета"
+  },
+  {
+    "file": "17_alderaan.md",
+    "term": "Алдераан",
+    "category": "планета"
+  },
+  {
+    "file": "18_zvezda_smerti.md",
+    "term": "Звезда Смерти",
+    "category": "технология"
+  },
+  {
+    "file": "19_svetovoy_mech.md",
+    "term": "Световой меч",
+    "category": "технология"
+  },
+  {
+    "file": "20_tysyachiletniy_sokol.md",
+    "term": "Тысячелетний сокол",
+    "category": "технология"
+  },
+  {
+    "file": "21_sila.md",
+    "term": "Сила",
+    "category": "технология"
+  },
+  {
+    "file": "22_droid_r2d2.md",
+    "term": "R2-D2",
+    "category": "технология"
+  },
+  {
+    "file": "23_droid_c3po.md",
+    "term": "C-3PO",
+    "category": "технология"
+  },
+  {
+    "file": "24_blaster.md",
+    "term": "Бластер",
+    "category": "технология"
+  },
+  {
+    "file": "25_dzhedai.md",
+    "term": "Джедаи",
+    "category": "организация"
+  },
+  {
+    "file": "26_sithi.md",
+    "term": "Ситхи",
+    "category": "организация"
+  },
+  {
+    "file": "27_galakticheskaya_imperiya.md",
+    "term": "Галактическая Империя",
+    "category": "организация"
+  },
+  {
+    "file": "28_alyans_povstantsev.md",
+    "term": "Альянс повстанцев",
+    "category": "организация"
+  },
+  {
+    "file": "29_vuki.md",
+    "term": "Вуки",
+    "category": "раса"
+  },
+  {
+    "file": "30_bitva_pri_yavine.md",
+    "term": "Битва при Явине",
+    "category": "событие"
+  },
+  {
+    "file": "31_klonicheskiye_voyny.md",
+    "term": "Клонические войны",
+    "category": "событие"
+  },
+  {
+    "file": "32_prikaz_66.md",
+    "term": "Приказ 66",
+    "category": "событие"
+  }
+]
