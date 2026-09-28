@@ -1,14 +1,14 @@
 """
 build_index.py
 
-Строит векторный индекс FAISS из базы знаний в формате Markdown/TXT.
+Строит векторный индекс FAISS из базы знаний в формате Markdown/TXT
 
 Шаги:
-    1. Чтение всех файлов из папки knowledge_base/.
-    2. Разбиение текстов на чанки (RecursiveCharacterTextSplitter).
-    3. Генерация эмбеддингов моделью sentence-transformers/all-MiniLM-L6-v2.
-    4. Сохранение индекса FAISS на диск вместе с метаданными.
-    5. Запись краткого отчета в index_report.json.
+    1. Чтение всех файлов из папки knowledge_base/
+    2. Разбиение текстов на чанки (RecursiveCharacterTextSplitter)
+    3. Генерация эмбеддингов моделью sentence-transformers/all-MiniLM-L6-v2
+    4. Сохранение индекса FAISS на диск вместе с метаданными
+    5. Запись краткого отчета в index_report.json
 
 Запуск:
     python src/build_index.py
