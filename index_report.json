@@ -1,0 +1,10 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "knowledge_base_dir": "knowledge_base",
+  "documents_count": 32,
+  "chunks_count": 33,
+  "chunk_size": 800,
+  "chunk_overlap": 100,
+  "generation_time_sec": 0.24
+}
