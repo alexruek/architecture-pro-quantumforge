@@ -20,6 +20,7 @@ class AskResponse(BaseModel):
     answer: str
     sources: list[str]
     used_context: bool
+    status: str
 
 
 @app.post("/ask", response_model=AskResponse)
@@ -29,6 +30,7 @@ def ask(request: AskRequest) -> AskResponse:
         answer=result.answer,
         sources=result.sources,
         used_context=result.used_context,
+        status=result.status,
     )
 
 

@@ -32,3 +32,7 @@ OPENAI_MODEL_NAME = os.getenv("OPENAI_MODEL_NAME", "gpt-4o-mini")
 LOCAL_LLM_MODEL_NAME = os.getenv("LOCAL_LLM_MODEL_NAME", "google/flan-t5-base")
 
 NO_ANSWER_PHRASE = "Я не знаю ответа на этот вопрос по имеющейся базе знаний."
+
+# Уровень защиты от промпт-инъекций для задания 5 (0-3, боевой - 3).
+# См. docstring в src/injection_guard.py
+PROTECTION_LEVEL = int(os.getenv("PROTECTION_LEVEL", "3"))
