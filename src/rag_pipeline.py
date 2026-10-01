@@ -4,8 +4,13 @@
 от промпт-инъекций (protection_level, 0-3) - см. docstring в
 src/injection_guard.py. Поиск по индексу, few-shot и Chain-of-Thought
 из задания 4 не изменились.
+
+Задание 6 добавляет перечитывание индекса без перезапуска бота: если
+update_index.py заменил файл index.faiss, следующий вопрос уже
+обрабатывается по новой версии индекса.
 """
 
+import logging
 from dataclasses import dataclass, field
 
 from langchain_community.vectorstores import FAISS
@@ -14,6 +19,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 import config
 import injection_guard
 from prompts import SYSTEM_PROMPT, SYSTEM_PROMPT_UNPROTECTED, FEW_SHOT_EXAMPLES, PROMPT_TEMPLATE
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -38,7 +45,33 @@ class RagPipeline:
             self.embeddings,
             allow_dangerous_deserialization=True,
         )
+        self._index_stamp = self._read_index_stamp()
         self.llm = self._init_llm()
+
+    @staticmethod
+    def _read_index_stamp():
+        """Время изменения и размер index.faiss: по ним бот замечает обновление индекса (задание 6)"""
+        path = config.INDEX_PATH / "index.faiss"
+        if not path.exists():
+            return None
+        info = path.stat()
+        return (info.st_mtime_ns, info.st_size)
+
+    def _reload_if_changed(self) -> None:
+        """Перечитывает индекс, если update_index.py заменил его на диске"""
+        stamp = self._read_index_stamp()
+        if stamp is None or stamp == self._index_stamp:
+            return
+        try:
+            self.vector_store = FAISS.load_local(
+                str(config.INDEX_PATH),
+                self.embeddings,
+                allow_dangerous_deserialization=True,
+            )
+            self._index_stamp = stamp
+            logger.info("Индекс обновлен на диске, перечитан без перезапуска бота")
+        except Exception:
+            logger.exception("Не удалось перечитать индекс, используется предыдущая версия")
 
     @staticmethod
     def _init_llm():
@@ -101,6 +134,8 @@ class RagPipeline:
         )
 
     def ask(self, question: str) -> RagAnswer:
+        self._reload_if_changed()
+
         # Уровень 2+: запрос проверяется на признаки инъекции до обращения к индексу
         if self.protection_level >= 2:
             query_triggers = injection_guard.find_triggers(question)

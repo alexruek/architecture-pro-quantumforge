@@ -34,7 +34,7 @@ REPORT_PATH = Path("index_report.json")
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 EMBEDDING_DIM = 384
 
-CHUNK_SIZE = 800
+CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 100
 
 

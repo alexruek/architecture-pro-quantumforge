@@ -1,0 +1,87 @@
+2026-10-01 18:57:52 UTC INFO update started, source=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/knowledge_base, index=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface, dry-run
+2026-10-01 18:57:52 UTC INFO mode: full rebuild (manifest is missing or corrupted)
+2026-10-01 18:57:52 UTC INFO files found: 33 (added 33, changed 0, removed 0, unchanged 0)
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/01_ksarn_velgor.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/02_deyn_koriel.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/03_princessa_mira_alten.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/04_reks_dorian.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/05_master_terin_aykos.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/06_mudrec_zen_oray.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/07_imperator_draks_moler.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/08_horrak.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/09_ksevor_tan.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/10_master_kadan_iris.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/11_dyunar.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/12_veloriya.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/13_centralis.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/14_krionis.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/15_silvana.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/16_moroan.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/17_asterra.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/18_voyd_yadro.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/19_plazmennyy_klinok.md
+2026-10-01 18:57:52 UTC INFO   added: knowledge_base/20_strannik_tysyacheletiya.md
+2026-10-01 18:57:52 UTC INFO   added: ... and 13 more
+2026-10-01 18:57:52 UTC INFO dry-run finished at 2026-10-01 18:57:52 UTC, index not changed: 33 files to add, 0 to change, 0 to remove
+2026-10-01 18:58:17 UTC INFO update started, source=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/knowledge_base, index=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface
+2026-10-01 18:58:17 UTC INFO mode: full rebuild (manifest is missing or corrupted)
+2026-10-01 18:58:17 UTC INFO files found: 33 (added 33, changed 0, removed 0, unchanged 0)
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/01_ksarn_velgor.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/02_deyn_koriel.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/03_princessa_mira_alten.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/04_reks_dorian.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/05_master_terin_aykos.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/06_mudrec_zen_oray.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/07_imperator_draks_moler.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/08_horrak.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/09_ksevor_tan.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/10_master_kadan_iris.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/11_dyunar.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/12_veloriya.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/13_centralis.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/14_krionis.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/15_silvana.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/16_moroan.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/17_asterra.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/18_voyd_yadro.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/19_plazmennyy_klinok.md
+2026-10-01 18:58:17 UTC INFO   added: knowledge_base/20_strannik_tysyacheletiya.md
+2026-10-01 18:58:17 UTC INFO   added: ... and 13 more
+2026-10-01 18:58:17 UTC WARNING file knowledge_base/33_zlonamerennyy_dokument.md looks like a prompt injection (rules: ignore_instructions, forced_output, known_canary, credentials_disclosure), indexed anyway
+2026-10-01 18:58:29 UTC INFO chunks: +34, -0, total 34; index size 91.4 KiB; embeddings 0.48 s; duration 11.51 s
+2026-10-01 18:58:29 UTC INFO index updated at 2026-10-01 18:58:29 UTC, 33 files added, 0 changed, 0 removed, 0 errors
+2026-10-01 18:59:19 UTC INFO update started, source=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/knowledge_base, index=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface
+2026-10-01 18:59:19 UTC INFO files found: 33 (added 0, changed 0, removed 0, unchanged 33)
+2026-10-01 18:59:19 UTC INFO index checked at 2026-10-01 18:59:19 UTC, no changes, 34 chunks, index size 91.4 KiB, 0 errors
+2026-10-01 19:01:00 UTC INFO update started, source=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/knowledge_base, index=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface
+2026-10-01 19:01:00 UTC INFO files found: 34 (added 1, changed 0, removed 0, unchanged 33)
+2026-10-01 19:01:00 UTC INFO   added: knowledge_base/34_kashrim.md
+2026-10-01 19:01:07 UTC INFO chunks: +1, -0, total 35; index size 94.2 KiB; embeddings 0.25 s; duration 7.01 s
+2026-10-01 19:01:07 UTC INFO index updated at 2026-10-01 19:01:07 UTC, 1 files added, 0 changed, 0 removed, 0 errors
+2026-10-01 19:14:58 UTC INFO update started, source=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/knowledge_base, index=/Users/sasha/Documents/Обучение/Яндекс_Практикум/Архитектор_ПО/architecture-pro-quantumforge/faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface
+2026-10-01 19:14:58 UTC INFO mode: full rebuild (model, backend or chunking parameters changed)
+2026-10-01 19:14:58 UTC INFO files found: 34 (added 34, changed 0, removed 0, unchanged 0)
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/01_ksarn_velgor.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/02_deyn_koriel.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/03_princessa_mira_alten.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/04_reks_dorian.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/05_master_terin_aykos.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/06_mudrec_zen_oray.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/07_imperator_draks_moler.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/08_horrak.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/09_ksevor_tan.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/10_master_kadan_iris.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/11_dyunar.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/12_veloriya.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/13_centralis.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/14_krionis.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/15_silvana.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/16_moroan.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/17_asterra.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/18_voyd_yadro.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/19_plazmennyy_klinok.md
+2026-10-01 19:14:58 UTC INFO   added: knowledge_base/20_strannik_tysyacheletiya.md
+2026-10-01 19:14:58 UTC INFO   added: ... and 14 more
+2026-10-01 19:14:58 UTC WARNING file knowledge_base/33_zlonamerennyy_dokument.md looks like a prompt injection (rules: ignore_instructions, forced_output, known_canary, credentials_disclosure), indexed anyway
+2026-10-01 19:15:08 UTC INFO chunks: +34, -0, total 34; index size 92.5 KiB; embeddings 0.24 s; duration 10.55 s
+2026-10-01 19:15:08 UTC INFO index updated at 2026-10-01 19:15:08 UTC, 34 files added, 0 changed, 0 removed, 0 errors

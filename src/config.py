@@ -20,7 +20,7 @@ EMBEDDING_MODEL_NAME = os.getenv(
     "EMBEDDING_MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2"
 )
 
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "800"))
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1200"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "100"))
 
 TOP_K = int(os.getenv("TOP_K", "4"))
