@@ -9,6 +9,11 @@
 #   PYTHON                  интерпретатор (по умолчанию .venv/bin/python или python3)
 #   UPDATE_ATTEMPTS         число попыток (по умолчанию 3)
 #   UPDATE_RETRY_DELAY_SEC  пауза между попытками в секундах (по умолчанию 300)
+#   RUN_EVAL_AFTER_UPDATE   true - после успешного обновления прогнать золотой
+#                           набор (src/evaluate.py, задание 7), по умолчанию false
+#   EVAL_MIN_PASS           минимальная доля прошедших вопросов (по умолчанию 0.7).
+#                           Если качество ниже, скрипт завершается с кодом 4,
+#                           в logs/update_index.log пишется предупреждение
 
 set -u
 
@@ -33,7 +38,7 @@ while true; do
   code=$?
 
   if [ "$code" -ne 1 ]; then
-    exit "$code"
+    break
   fi
 
   stamp="$(date -u '+%Y-%m-%d %H:%M:%S')"
@@ -46,3 +51,19 @@ while true; do
   attempt=$((attempt + 1))
   sleep "$DELAY"
 done
+
+# Задание 7: проверка качества обновленного индекса на золотом наборе
+if [ "$code" -eq 0 ] && [ "${RUN_EVAL_AFTER_UPDATE:-false}" = "true" ]; then
+  MIN_PASS="${EVAL_MIN_PASS:-0.7}"
+  "$PYTHON" src/evaluate.py --min-pass "$MIN_PASS" --report logs/eval_last_report.md >> logs/eval_runs.log 2>&1
+  eval_code=$?
+  stamp="$(date -u '+%Y-%m-%d %H:%M:%S')"
+  if [ "$eval_code" -eq 0 ]; then
+    echo "$stamp UTC INFO quality check passed (min pass $MIN_PASS), report logs/eval_last_report.md" >> logs/update_index.log
+  else
+    echo "$stamp UTC WARNING quality check failed with code $eval_code (min pass $MIN_PASS), report logs/eval_last_report.md" >> logs/update_index.log
+    exit 4
+  fi
+fi
+
+exit "$code"

@@ -19,6 +19,7 @@ RUN pip install torch --index-url https://download.pytorch.org/whl/cpu \
 COPY src ./src
 COPY scripts ./scripts
 COPY deploy ./deploy
+COPY golden_questions.txt ./
 RUN chmod +x scripts/*.sh deploy/*.sh
 
 EXPOSE 8000

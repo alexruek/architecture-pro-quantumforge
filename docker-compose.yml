@@ -43,6 +43,8 @@ services:
       UPDATE_RETRY_DELAY_SEC: ${UPDATE_RETRY_DELAY_SEC:-300}
       QUARANTINE_INJECTIONS: ${QUARANTINE_INJECTIONS:-false}
       RUN_ON_START: ${RUN_ON_START:-false}
+      RUN_EVAL_AFTER_UPDATE: ${RUN_EVAL_AFTER_UPDATE:-false}
+      EVAL_MIN_PASS: ${EVAL_MIN_PASS:-0.7}
     volumes:
       - ./knowledge_base:/app/knowledge_base
       - ./faiss_index:/app/faiss_index
