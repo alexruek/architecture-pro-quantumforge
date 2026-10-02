@@ -1,0 +1,14 @@
+{
+  "action": "apply",
+  "at": "2026-10-02T06:30:22+00:00",
+  "files": [
+    "01_ksarn_velgor.md",
+    "18_voyd_yadro.md",
+    "17_asterra.md"
+  ],
+  "entities": {
+    "01_ksarn_velgor.md": "Ксарн Велгор (персонаж)",
+    "18_voyd_yadro.md": "Войд-Ядро (технология)",
+    "17_asterra.md": "Астерра (планета)"
+  }
+}

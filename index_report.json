@@ -1,0 +1,10 @@
+{
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dim": 384,
+  "knowledge_base_dir": "knowledge_base",
+  "documents_count": 34,
+  "chunks_count": 34,
+  "chunk_size": 1200,
+  "chunk_overlap": 100,
+  "generation_time_sec": 0.62
+}

@@ -1,0 +1,66 @@
+@startuml task6_architecture
+!pragma layout smetana
+title Задание 6. Автоматическое ежедневное обновление индекса
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam defaultFontSize 13
+
+database "knowledge_base/\n*.md, *.txt\n(источник данных)" as KB
+
+node "Планировщик" as Sched {
+  [cron\nежедневно в 06:00] as Cron
+}
+
+component "scripts/run_update.sh\nдо 3 попыток, пауза 5 минут\nпри коде выхода 1" as Wrapper
+
+package "src/update_index.py" as Upd {
+  [1. Блокировка\nfaiss_index/.update.lock] as Lock
+  [2. Сканирование\nsha256 каждого файла] as Scan
+  [3. Сравнение с манифестом\nновые, измененные, удаленные] as Diff
+  [4. Разбиение на чанки\n1200 символов, перекрытие 100] as Chunk
+  [5. Эмбеддинги\nmultilingual-e5-small, 384] as Embed
+  [6. Обновление FAISS\nудаление старых + добавление новых] as Upsert
+}
+
+cloud "Hugging Face\nкэш модели" as HF
+
+folder "faiss_index/" as Index {
+  file "index.faiss" as IF
+  file "index.pkl" as IP
+  file "manifest.json\nпуть -> sha256, число чанков" as MF
+}
+
+folder "logs/" as Logs {
+  file "update_index.log\n(текст, ротация 1 МБ x 5)" as L1
+  file "update_runs.jsonl\n(по записи на запуск)" as L2
+  file "cron.log" as L3
+}
+
+component "RAG-бот\nsrc/rag_pipeline.py\nFastAPI / REPL" as Bot
+
+Cron --> Wrapper : запуск по расписанию
+Wrapper --> Lock
+Lock --> Scan
+KB --> Scan : чтение файлов
+Scan --> Diff
+MF --> Diff : прежнее состояние
+Diff --> Chunk : только новые\nи измененные
+Chunk --> Embed
+HF ..> Embed : модель
+Embed --> Upsert
+IF <--> Upsert : загрузка и\nатомная замена
+Upsert --> IP
+Upsert --> MF : новый манифест
+Upd --> L1 : старт, план, итог, ошибки
+Upd --> L2 : итог запуска
+Wrapper --> L3 : вывод cron
+IF ..> Bot : бот замечает новый\nindex.faiss и перечитывает индекс
+
+note bottom of Wrapper
+  Коды выхода update_index.py:
+  0 - успех, 1 - ошибка (повтор),
+  3 - уже выполняется (без повтора)
+end note
+
+@enduml

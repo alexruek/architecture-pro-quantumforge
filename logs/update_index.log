@@ -1,0 +1,34 @@
+2026-10-02 06:07:23 UTC INFO update started, source=knowledge_base, index=faiss_index, model=intfloat/multilingual-e5-small, backend=huggingface
+2026-10-02 06:07:23 UTC INFO mode: full rebuild (manifest is missing or corrupted)
+2026-10-02 06:07:23 UTC INFO files found: 34 (added 34, changed 0, removed 0, unchanged 0)
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/01_ksarn_velgor.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/02_deyn_koriel.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/03_princessa_mira_alten.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/04_reks_dorian.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/05_master_terin_aykos.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/06_mudrec_zen_oray.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/07_imperator_draks_moler.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/08_horrak.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/09_ksevor_tan.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/10_master_kadan_iris.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/11_dyunar.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/12_veloriya.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/13_centralis.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/14_krionis.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/15_silvana.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/16_moroan.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/17_asterra.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/18_voyd_yadro.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/19_plazmennyy_klinok.md
+2026-10-02 06:07:23 UTC INFO   added: knowledge_base/20_strannik_tysyacheletiya.md
+2026-10-02 06:07:23 UTC INFO   added: ... and 14 more
+2026-10-02 06:07:23 UTC WARNING file knowledge_base/33_zlonamerennyy_dokument.md looks like a prompt injection (rules: ignore_instructions, forced_output, known_canary, credentials_disclosure), indexed anyway
+2026-10-02 06:07:31 UTC INFO chunks: +34, -0, total 34; index size 92.7 KiB; embeddings 0.44 s; duration 7.93 s
+2026-10-02 06:07:31 UTC INFO index updated at 2026-10-02 06:07:31 UTC, 34 files added, 0 changed, 0 removed, 0 errors
+2026-10-02 06:30:59 UTC INFO update started, source=knowledge_base, index=faiss_index, model=intfloat/multilingual-e5-small, backend=huggingface
+2026-10-02 06:30:59 UTC INFO files found: 31 (added 0, changed 0, removed 3, unchanged 31)
+2026-10-02 06:30:59 UTC INFO   removed: knowledge_base/01_ksarn_velgor.md
+2026-10-02 06:30:59 UTC INFO   removed: knowledge_base/17_asterra.md
+2026-10-02 06:30:59 UTC INFO   removed: knowledge_base/18_voyd_yadro.md
+2026-10-02 06:30:59 UTC INFO chunks: +0, -3, total 31; index size 84.1 KiB; embeddings 0.00 s; duration 0.01 s
+2026-10-02 06:30:59 UTC INFO index updated at 2026-10-02 06:30:59 UTC, 0 files added, 0 changed, 3 removed, 0 errors

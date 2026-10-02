@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-02T06:30:59+00:00",
+  "signature": {
+    "model": "intfloat/multilingual-e5-small",
+    "backend": "huggingface",
+    "chunk_size": 1200,
+    "chunk_overlap": 100
+  },
+  "files": {
+    "knowledge_base/02_deyn_koriel.md": {
+      "sha256": "43ae1796d379cb29fa71703e97745c20579d8c3fd7dfb9f34d3a88b3d717c9a4",
+      "size": 1360,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/03_princessa_mira_alten.md": {
+      "sha256": "998263462019462345877470efc47a66de817437b7f46ffa12cdf367f5f59d43",
+      "size": 1198,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/04_reks_dorian.md": {
+      "sha256": "e250311905cec7bc4567a2035cd4944016e967da7616084a11186391f669b8a2",
+      "size": 1222,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/05_master_terin_aykos.md": {
+      "sha256": "2448a6a2e7a3ef5327b41f325d32ca3a2f1fd99a1fd69bd0622092d2b936d395",
+      "size": 1135,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/06_mudrec_zen_oray.md": {
+      "sha256": "b9dd13dce74dc9acc2b997031cffb3cf57a63ccc25b74ca81872d997eb7c5a69",
+      "size": 1170,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/07_imperator_draks_moler.md": {
+      "sha256": "3fc8b1bee69899c42447fa067037bd036c0cf6a2f2303f743e2931ace8fdb8a6",
+      "size": 1303,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/08_horrak.md": {
+      "sha256": "1cc29b51c43bc6060fc85459214ed3133d5900fdac9bcdf72eedfca09c06d8cc",
+      "size": 975,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/09_ksevor_tan.md": {
+      "sha256": "f847b93e12a847cce11fd6f8bcef76f3b03d7e15b0b10121bf0d07ab4f3c424d",
+      "size": 1049,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/10_master_kadan_iris.md": {
+      "sha256": "05da4ba3617e2cd34082965894b3436960f4d6420b745f5f7b4c8ce2e516bf31",
+      "size": 1007,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/11_dyunar.md": {
+      "sha256": "0473d37d3df485d1ca8640b3dce9a8d148ec8560678648e09dbfe7ce361702bd",
+      "size": 996,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/12_veloriya.md": {
+      "sha256": "2477f12970423ba77540eba2e5a545cf1b693e0a55713416fb38d2771228ec97",
+      "size": 1048,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/13_centralis.md": {
+      "sha256": "a5ea07b213b175bfcd4e9111c51f3ba9724f041cd17477c1af541c1741a0d0a9",
+      "size": 931,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/14_krionis.md": {
+      "sha256": "e9e258a0ef3ce4349e5d34482c53386a2e860e3afb6371b6c6623ee1835b51f5",
+      "size": 1062,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/15_silvana.md": {
+      "sha256": "1c03b4acd217a6e0284671814688ef93171491c2a9a6b3cc8d4b9f868247a72f",
+      "size": 1016,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/16_moroan.md": {
+      "sha256": "9ece9f7a6e4b29e889a23f23769822ee050ab6e6661da6247c4f66b161636425",
+      "size": 981,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/19_plazmennyy_klinok.md": {
+      "sha256": "ba79cbc09125ab1fb20f101653401f03abfe62d054b414cd735dd317f083b985",
+      "size": 1069,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/20_strannik_tysyacheletiya.md": {
+      "sha256": "1103a93cae5d6a460582b543a82277e98debd49d290a634684c307fe50fde63c",
+      "size": 1011,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/21_sint_potok.md": {
+      "sha256": "ba115458933bdfeb3bf91f6614fbce5841c79e355827dc6204716cbc16914c0c",
+      "size": 1123,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/22_droid_t2_d9.md": {
+      "sha256": "c5897852488b69f324d5b4cd6bafc86502f1567c8b08c955609830ed9cb8aed5",
+      "size": 1093,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/23_droid_s4_po.md": {
+      "sha256": "c3d6ad0924729f62fc4c2faf8592c59b66a9514ab345e06fc16d1d1193c7bce1",
+      "size": 893,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/24_impulsnik.md": {
+      "sha256": "5acd53a64bbb7a8ae222243613a32c8cedcd6db530f795928dea36dadde7a907",
+      "size": 1013,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/25_hraniteli_potoka.md": {
+      "sha256": "7774abc3761208bf6f76322fa246ac67c7d9de1a3c1da831ad16ecfa1031367c",
+      "size": 1146,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/26_priverzhency_teni.md": {
+      "sha256": "4b14ca0096e55e631b880a6fe53011fb74419e680cd8f42957f31ba2ef6d635c",
+      "size": 1132,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/27_zvezdnaya_gegemoniya.md": {
+      "sha256": "64762edf52f3875c5bcd0ccda83f4a956df1c3bae8714bf8cf91bceb0b2d30f1",
+      "size": 1003,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/28_soyuz_svobodnyh_mirov.md": {
+      "sha256": "778fabf3bd2486929f4b1e8d5918cddfe6c9889ccadd508c02fff928d1d41437",
+      "size": 1047,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/29_tarviny.md": {
+      "sha256": "295c3eb34face286f97bb6c3aa137ef67a42045c60d6ef6ce5e81be8a50d18bc",
+      "size": 1039,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/30_bitva_pri_yovene.md": {
+      "sha256": "c91cf66fb73b80fea5f16faecf40f4923ce357b0f2c94710e60f68fc9af667c0",
+      "size": 1044,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/31_replika_voyny.md": {
+      "sha256": "0b79207de8cff634e8cc931cb34f7b63efe4b74a4b7c72d36c41ed21963c6e5d",
+      "size": 1098,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/32_direktiva_66.md": {
+      "sha256": "399d37fbf0235b5c0d5df01bf3883658c6c1c6c6c980280b625b9ea9449eb6b6",
+      "size": 1007,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/33_zlonamerennyy_dokument.md": {
+      "sha256": "36f4e6f5c616d81aa22c2caa1012821c0ce929e176dbd4e338555df68ab93673",
+      "size": 183,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    },
+    "knowledge_base/34_kashrim.md": {
+      "sha256": "4d8f6cd197e99a89ca2e4560a2ea5ffdf53e57c42e561fdb6bab6a96ebb30969",
+      "size": 1061,
+      "chunks": 1,
+      "indexed_at": "2026-10-02T06:07:23+00:00"
+    }
+  }
+}
