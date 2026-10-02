@@ -4,35 +4,35 @@
     "original_term": "Дарт Вейдер",
     "new_file": "01_ksarn_velgor.md",
     "new_term": "Ксарн Велгор",
-    "replacements_made": 8
+    "replacements_made": 9
   },
   {
     "raw_file": "02_lyuk_skayuoker.md",
     "original_term": "Люк Скайуокер",
     "new_file": "02_deyn_koriel.md",
     "new_term": "Дэйн Кориэл",
-    "replacements_made": 3
+    "replacements_made": 8
   },
   {
     "raw_file": "03_printsessa_leya.md",
     "original_term": "Принцесса Лея",
     "new_file": "03_princessa_mira_alten.md",
     "new_term": "Принцесса Мира Альтен",
-    "replacements_made": 3
+    "replacements_made": 4
   },
   {
     "raw_file": "04_han_solo.md",
     "original_term": "Хан Соло",
     "new_file": "04_reks_dorian.md",
     "new_term": "Рекс Дориан",
-    "replacements_made": 5
+    "replacements_made": 4
   },
   {
     "raw_file": "05_obi_van_kenobi.md",
     "original_term": "Оби-Ван Кеноби",
     "new_file": "05_master_terin_aykos.md",
     "new_term": "Мастер Тэрин Айкос",
-    "replacements_made": 3
+    "replacements_made": 5
   },
   {
     "raw_file": "06_yoda.md",
@@ -46,7 +46,7 @@
     "original_term": "Император Палпатин",
     "new_file": "07_imperator_draks_moler.md",
     "new_term": "Император Дракс Молер",
-    "replacements_made": 3
+    "replacements_made": 4
   },
   {
     "raw_file": "08_chubakka.md",
@@ -67,7 +67,7 @@
     "original_term": "Мейс Винду",
     "new_file": "10_master_kadan_iris.md",
     "new_term": "Мастер Кадан Ирис",
-    "replacements_made": 4
+    "replacements_made": 6
   },
   {
     "raw_file": "11_tatuin.md",
@@ -95,7 +95,7 @@
     "original_term": "Хот",
     "new_file": "14_krionis.md",
     "new_term": "Крионис",
-    "replacements_made": 3
+    "replacements_made": 4
   },
   {
     "raw_file": "15_endor.md",
@@ -123,7 +123,7 @@
     "original_term": "Звезда Смерти",
     "new_file": "18_voyd_yadro.md",
     "new_term": "Войд-Ядро",
-    "replacements_made": 4
+    "replacements_made": 3
   },
   {
     "raw_file": "19_svetovoy_mech.md",
@@ -144,7 +144,7 @@
     "original_term": "Сила",
     "new_file": "21_sint_potok.md",
     "new_term": "Синт-Поток",
-    "replacements_made": 3
+    "replacements_made": 4
   },
   {
     "raw_file": "22_droid_r2d2.md",
@@ -172,14 +172,14 @@
     "original_term": "Джедаи",
     "new_file": "25_hraniteli_potoka.md",
     "new_term": "Хранители Потока",
-    "replacements_made": 2
+    "replacements_made": 4
   },
   {
     "raw_file": "26_sithi.md",
     "original_term": "Ситхи",
     "new_file": "26_priverzhency_teni.md",
     "new_term": "Приверженцы Тени",
-    "replacements_made": 5
+    "replacements_made": 6
   },
   {
     "raw_file": "27_galakticheskaya_imperiya.md",
@@ -193,14 +193,14 @@
     "original_term": "Альянс повстанцев",
     "new_file": "28_soyuz_svobodnyh_mirov.md",
     "new_term": "Союз Свободных Миров",
-    "replacements_made": 4
+    "replacements_made": 5
   },
   {
     "raw_file": "29_vuki.md",
     "original_term": "Вуки",
     "new_file": "29_tarviny.md",
     "new_term": "Тарвины",
-    "replacements_made": 4
+    "replacements_made": 5
   },
   {
     "raw_file": "30_bitva_pri_yavine.md",

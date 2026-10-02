@@ -90,7 +90,10 @@ def load_terms(terms_file: Path) -> dict:
     if not terms_file.exists():
         return {}
     data = json.loads(terms_file.read_text(encoding="utf-8"))
-    return data.get("terms", data)
+    if "terms" not in data:
+        return data
+    # основные соответствия и падежные формы проверяются вместе
+    return {**data["terms"], **data.get("forms", {})}
 
 
 def match_entity(query: str, docs: list[KbDoc]) -> KbDoc | None:
