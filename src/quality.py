@@ -34,6 +34,12 @@ MIN_ANSWER_LENGTH = 20
 _WORD_RE = re.compile(r"\w+", re.UNICODE)
 
 
+def clean_text(text: str) -> str:
+    """Приводит ответ модели к правилам оформления отчетов: без "е" с точками, длинных тире и разметки"""
+    text = (text or "").replace("\u0451", "\u0435").replace("\u0401", "\u0415")
+    return text.replace("\u2014", "-").replace("\u2013", "-").replace("**", "")
+
+
 def is_refusal_text(answer: str) -> bool:
     text = (answer or "").lower()
     return any(marker in text for marker in REFUSAL_MARKERS)
