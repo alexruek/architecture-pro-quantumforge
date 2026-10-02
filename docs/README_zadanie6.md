@@ -17,7 +17,7 @@
 3. Читает манифест faiss_index/manifest.json (путь файла, sha256, число чанков) и сравнивает с текущим состоянием: новые, измененные, удаленные, без изменений.
 4. Читает только новые и измененные файлы, проверяет их правилами src/injection_guard.py из задания 5 (по умолчанию предупреждение в лог, с флагом --quarantine файл не индексируется).
 5. Режет на чанки с теми же параметрами, что build_index.py: RecursiveCharacterTextSplitter, 1200 символов, перекрытие 100, те же metadata (source, title, chunk_id, chunk_index).
-6. Считает эмбеддинги моделью из config.EMBEDDING_MODEL_NAME (all-MiniLM-L6-v2). Модель загружается только если есть что векторизовать, поэтому запуск без изменений быстрый и не требует сети.
+6. Считает эмбеддинги моделью из config.EMBEDDING_MODEL_NAME (intfloat/multilingual-e5-small). Модель загружается только если есть что векторизовать, поэтому запуск без изменений быстрый и не требует сети.
 7. Удаляет из FAISS чанки измененных и удаленных файлов, добавляет новые.
 8. Сохраняет индекс через временную папку и замену файлов (сначала index.pkl, затем index.faiss), после этого записывает манифест.
 9. Пишет итог в логи и возвращает код выхода.
@@ -48,7 +48,7 @@
 Текстовый лог logs/update_index.log (ротация, 1 МБ, 5 файлов), время в UTC:
 
 ```
-2026-10-02 06:00:03 UTC INFO update started, source=.../knowledge_base, index=.../faiss_index, model=sentence-transformers/all-MiniLM-L6-v2, backend=huggingface
+2026-10-02 06:00:03 UTC INFO update started, source=knowledge_base, index=faiss_index, model=intfloat/multilingual-e5-small, backend=huggingface
 2026-10-02 06:00:03 UTC INFO files found: 34 (added 1, changed 0, removed 0, unchanged 33)
 2026-10-02 06:00:03 UTC INFO   added: knowledge_base/34_kashrim.md
 2026-10-02 06:00:05 UTC INFO chunks: +1, -0, total 34; index size 94.2 KiB; embeddings 0.31 s; duration 1.84 s

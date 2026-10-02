@@ -442,8 +442,8 @@ def run_update(settings: Settings, log: logging.Logger | None = None) -> RunReco
 
     log.info(
         "update started, source=%s, index=%s, model=%s, backend=%s%s",
-        settings.source_dir,
-        settings.index_dir,
+        source_key(settings.source_dir, settings),
+        source_key(settings.index_dir, settings),
         settings.model_name,
         settings.backend,
         ", dry-run" if settings.dry_run else "",
