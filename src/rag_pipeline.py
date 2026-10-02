@@ -255,14 +255,14 @@ class RagPipeline:
 
         guard_triggers: list = []
         if self.protection_level >= 2:
-            clean_chunks, chunk_triggers, _dropped = injection_guard.filter_chunks(relevant_chunks)
-            if chunk_triggers:
+            # Подозрительные чанки исключаются из контекста, ответ строится по
+            # остальным. Если кроме них ничего не нашлось, запрос блокируется:
+            # единственный "ответ" на него - содержимое вредоносного документа
+            clean_chunks, chunk_triggers, dropped = injection_guard.filter_chunks(relevant_chunks)
+            if dropped and not clean_chunks:
                 return self._blocked(question, chunk_triggers, **stats)
             relevant_chunks = clean_chunks
             guard_triggers = chunk_triggers
-
-        if not relevant_chunks:
-            return self._refused(question, guard_triggers, **stats)
 
         context = self._build_context(relevant_chunks)
 

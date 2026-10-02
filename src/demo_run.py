@@ -11,11 +11,10 @@
    (config.PROTECTION_LEVEL, по умолчанию 3) и проверяет, что
    фактический статус совпадает с ожидаемым
 
-Требует уже собранного индекса (python src/build_index.py) и рабочего
-подключения к Hugging Face (или заданного OPENAI_API_KEY) - см.
-docs/README_zadanie5.md
+Требует собранного индекса (python src/update_index.py) и доступа к LLM
+(OPENAI_API_KEY в .env или локальная модель) - см. docs/README_zadanie5.md
 
-Результат: каждое обращение пишется в logs/queries.jsonl, сводный
+Результат: каждое обращение дописывается в logs/queries.jsonl, сводный
 человекочитаемый отчет - в logs/demo_log.md
 """
 
@@ -23,6 +22,7 @@ from pathlib import Path
 
 import config
 from logger import log_result
+from quality import clean_text
 from rag_pipeline import RagPipeline
 from scenarios import SCENARIOS
 
@@ -137,7 +137,7 @@ def render_report(matrix_rows, scenario_rows) -> str:
             lines.append(f"Сработавшие правила защиты: {', '.join(row['triggers'])}")
         lines.append("")
 
-    return "\n".join(lines)
+    return clean_text("\n".join(lines)) + "\n"
 
 
 def main():
@@ -147,8 +147,6 @@ def main():
         )
 
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
-    if QUERIES_LOG_FILE.exists():
-        QUERIES_LOG_FILE.unlink()
 
     pipeline = RagPipeline(protection_level=0)
 
