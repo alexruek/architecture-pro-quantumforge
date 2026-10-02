@@ -33,7 +33,7 @@ STATE_FILE = REMOVED_DIR / "_gaps.json"
 GAPS = {
     "01_ksarn_velgor.md": "Ксарн Велгор (персонаж)",
     "18_voyd_yadro.md": "Войд-Ядро (технология)",
-    "21_sint_potok.md": "Синт-Поток (технология)",
+    "17_asterra.md": "Астерра (планета)",
 }
 
 

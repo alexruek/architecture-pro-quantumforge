@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-02T06:07:31+00:00",
+  "updated_at": "2026-10-02T06:30:59+00:00",
   "signature": {
     "model": "intfloat/multilingual-e5-small",
     "backend": "huggingface",
@@ -8,12 +8,6 @@
     "chunk_overlap": 100
   },
   "files": {
-    "knowledge_base/01_ksarn_velgor.md": {
-      "sha256": "81db5aa9bcec43f399530bc7c6bc04df552477cd5db9e96e19aa5e7ca81bc80b",
-      "size": 1531,
-      "chunks": 1,
-      "indexed_at": "2026-10-02T06:07:23+00:00"
-    },
     "knowledge_base/02_deyn_koriel.md": {
       "sha256": "43ae1796d379cb29fa71703e97745c20579d8c3fd7dfb9f34d3a88b3d717c9a4",
       "size": 1360,
@@ -101,18 +95,6 @@
     "knowledge_base/16_moroan.md": {
       "sha256": "9ece9f7a6e4b29e889a23f23769822ee050ab6e6661da6247c4f66b161636425",
       "size": 981,
-      "chunks": 1,
-      "indexed_at": "2026-10-02T06:07:23+00:00"
-    },
-    "knowledge_base/17_asterra.md": {
-      "sha256": "77da49046259d20b42fbc21dbad0abf16700d42c3f01e1973f2e9bc3abbc1ec0",
-      "size": 979,
-      "chunks": 1,
-      "indexed_at": "2026-10-02T06:07:23+00:00"
-    },
-    "knowledge_base/18_voyd_yadro.md": {
-      "sha256": "8f9e741d1b75f75f5a42187fb9618f6c631aaa2abc9483c8f2534f97d5aa62b4",
-      "size": 1160,
       "chunks": 1,
       "indexed_at": "2026-10-02T06:07:23+00:00"
     },

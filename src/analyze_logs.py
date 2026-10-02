@@ -379,8 +379,8 @@ def recommendations(data: dict, audit: dict, threshold: float) -> list[str]:
         recs.append(
             "Проверить поиск по темам, где документ есть, но ответа нет: "
             + ", ".join(sorted({t["topic"] for t in misses}))
-            + ". Для русскоязычной базы заменить all-MiniLM-L6-v2 на многоязычную модель "
-            "(multilingual-e5-base, bge-m3) и добавить в документы синонимы и альтернативные названия."
+            + ". Сверить порог релевантности с оценками этих документов (scripts/tune_threshold.py) "
+            "и добавить в документы синонимы и альтернативные названия сущностей."
         )
     best = data["best"]
     if best and abs(best["threshold"] - threshold) >= 0.05:

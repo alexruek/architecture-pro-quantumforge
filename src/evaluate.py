@@ -305,6 +305,28 @@ def render_report(meta: dict, summary: dict, rows: list[dict]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def stale_index_files(kb_dir: Path, index_dir: Path) -> list:
+    """Файлы, по которым манифест индекса расходится с базой знаний
+
+    Защищает от прогона по устаревшему индексу, например когда документы
+    уже удалены из базы, а update_index.py еще не запускался. Без манифеста
+    (индекс собран build_index.py) проверка пропускается
+    """
+    manifest_path = index_dir / "manifest.json"
+    if not manifest_path.exists():
+        return []
+    try:
+        files = json.loads(manifest_path.read_text(encoding="utf-8")).get("files", {})
+    except (OSError, ValueError):
+        return []
+    indexed = {Path(key).name for key in files}
+    current = {
+        p.name for p in kb_dir.glob("**/*")
+        if p.is_file() and p.suffix.lower() in (".md", ".txt")
+    }
+    return sorted(indexed ^ current)
+
+
 def parse_args(argv=None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Проверка RAG-бота на золотом наборе (задание 7)")
     p.add_argument("--golden", type=Path, default=GOLDEN_FILE)
@@ -348,6 +370,20 @@ def main(argv=None) -> int:
     tag = args.tag
     if tag == "auto":
         tag = "gaps" if removed_docs else "baseline"
+    # метка должна соответствовать состоянию базы, иначе отчет вводит в заблуждение
+    if tag == "gaps" and not removed_docs:
+        print("Метка gaps, но все документы на месте. Сначала: python scripts/make_gaps.py apply")
+        return 2
+    if tag == "baseline" and removed_docs:
+        print(f"Метка baseline, но из базы удалены: {', '.join(removed_docs)}")
+        print("Верните документы: python scripts/make_gaps.py restore, затем python src/update_index.py")
+        return 2
+
+    stale = stale_index_files(args.kb_dir, args.index_dir)
+    if stale:
+        print(f"Индекс не соответствует базе знаний, расхождения: {', '.join(stale[:5])}")
+        print("Обновите индекс: python src/update_index.py")
+        return 2
 
     try:
         pipeline = RagPipeline(
