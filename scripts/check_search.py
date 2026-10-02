@@ -6,7 +6,7 @@
 
 Запуск из корня проекта:
     python scripts/check_search.py "Как называется родная планета Тарвинов?"
-    python scripts/check_search.py --k 6 "Кто такой Ксарн Велгор?"
+    python scripts/check_search.py --k 6 "Кто такой Хоррак?"
 
 Backend эмбеддингов берется из переменной EMBEDDINGS_BACKEND
 (по умолчанию huggingface, должен совпадать с тем, которым строили индекс)

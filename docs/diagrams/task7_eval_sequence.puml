@@ -10,7 +10,7 @@ actor "Пользователь\nили cron" as U
 participant "evaluate.py\n(золотой набор)" as E
 participant "RagPipeline\n(rag_pipeline.py)" as P
 participant "injection_guard.py" as G
-participant "Эмбеддинги\nall-MiniLM-L6-v2" as M
+participant "Эмбеддинги\nmultilingual-e5-small" as M
 database "FAISS\nfaiss_index/" as F
 participant "LLM\ngpt-4o-mini" as L
 database "logs/queries.jsonl" as Q

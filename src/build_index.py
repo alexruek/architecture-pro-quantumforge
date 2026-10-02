@@ -6,15 +6,17 @@ build_index.py
 Шаги:
     1. Чтение всех файлов из папки knowledge_base/
     2. Разбиение текстов на чанки (RecursiveCharacterTextSplitter)
-    3. Генерация эмбеддингов моделью sentence-transformers/all-MiniLM-L6-v2
+    3. Генерация эмбеддингов моделью из config.EMBEDDING_MODEL_NAME
     4. Сохранение индекса FAISS на диск вместе с метаданными
     5. Запись краткого отчета в index_report.json
 
-Запуск:
+Модель, пути и параметры чанков берутся из src/config.py (и .env)
+
+Запуск из корня проекта:
     python src/build_index.py
 
-Требования:
-    pip install -r requirements.txt
+Дальнейшие обновления индекса выполняет src/update_index.py (задание 6):
+он ведет манифест файлов и меняет индекс точечно
 """
 
 import json
@@ -22,20 +24,19 @@ import os
 import time
 from pathlib import Path
 
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-KNOWLEDGE_BASE_DIR = Path("knowledge_base")
-INDEX_DIR = Path("faiss_index")
-REPORT_PATH = Path("index_report.json")
+import config
+from embeddings_factory import get_embeddings
 
-EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-EMBEDDING_DIM = 384
+REPORT_PATH = config.BASE_DIR / "index_report.json"
 
-CHUNK_SIZE = 1200
-CHUNK_OVERLAP = 100
+
+def relative(path: Path) -> str:
+    """Путь относительно корня проекта: он попадает в метаданные чанков и в ответы бота"""
+    return path.relative_to(config.BASE_DIR).as_posix()
 
 
 def load_documents(base_dir: Path) -> list[Document]:
@@ -49,7 +50,7 @@ def load_documents(base_dir: Path) -> list[Document]:
             Document(
                 page_content=text,
                 metadata={
-                    "source": str(path),
+                    "source": relative(path),
                     "title": path.stem,
                 },
             )
@@ -60,8 +61,8 @@ def load_documents(base_dir: Path) -> list[Document]:
 def split_documents(documents: list[Document]) -> list[Document]:
     """Разбивает документы на чанки, сохраняя источник и позицию."""
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
+        chunk_size=config.CHUNK_SIZE,
+        chunk_overlap=config.CHUNK_OVERLAP,
         separators=["\n\n", "\n", ". ", " ", ""],
     )
     chunks = splitter.split_documents(documents)
@@ -80,7 +81,8 @@ def split_documents(documents: list[Document]) -> list[Document]:
 
 def build_index(chunks: list[Document]) -> tuple[FAISS, float]:
     """Генерирует эмбеддинги и строит индекс FAISS."""
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    backend = os.getenv("EMBEDDINGS_BACKEND", "huggingface").lower()
+    embeddings = get_embeddings(backend, config.EMBEDDING_MODEL_NAME)
 
     start = time.time()
     vector_store = FAISS.from_documents(chunks, embeddings)
@@ -90,40 +92,42 @@ def build_index(chunks: list[Document]) -> tuple[FAISS, float]:
 
 
 def main():
-    if not KNOWLEDGE_BASE_DIR.exists():
-        raise SystemExit(
-            f"Папка {KNOWLEDGE_BASE_DIR} не найдена. Сначала выполните Задание 2."
-        )
+    kb_dir = config.KNOWLEDGE_BASE_DIR
+    if not kb_dir.exists():
+        raise SystemExit(f"Папка {kb_dir} не найдена. Сначала выполните Задание 2.")
 
     print("Чтение базы знаний...")
-    documents = load_documents(KNOWLEDGE_BASE_DIR)
+    documents = load_documents(kb_dir)
     print(f"Найдено документов: {len(documents)}")
 
     print("Разбиение на чанки...")
     chunks = split_documents(documents)
     print(f"Получено чанков: {len(chunks)}")
 
-    print(f"Генерация эмбеддингов моделью {EMBEDDING_MODEL_NAME}...")
+    print(f"Генерация эмбеддингов моделью {config.EMBEDDING_MODEL_NAME}...")
     vector_store, elapsed = build_index(chunks)
 
-    INDEX_DIR.mkdir(exist_ok=True)
-    vector_store.save_local(str(INDEX_DIR))
-    print(f"Индекс сохранен в {INDEX_DIR}/")
+    config.INDEX_PATH.mkdir(exist_ok=True)
+    vector_store.save_local(str(config.INDEX_PATH))
+    # манифест от прошлой сборки больше не соответствует индексу:
+    # update_index.py создаст его заново при первом запуске
+    (config.INDEX_PATH / "manifest.json").unlink(missing_ok=True)
+    print(f"Индекс сохранен в {relative(config.INDEX_PATH)}/")
 
     report = {
-        "embedding_model": EMBEDDING_MODEL_NAME,
-        "embedding_dim": EMBEDDING_DIM,
-        "knowledge_base_dir": str(KNOWLEDGE_BASE_DIR),
+        "embedding_model": config.EMBEDDING_MODEL_NAME,
+        "embedding_dim": vector_store.index.d,
+        "knowledge_base_dir": relative(kb_dir),
         "documents_count": len(documents),
         "chunks_count": len(chunks),
-        "chunk_size": CHUNK_SIZE,
-        "chunk_overlap": CHUNK_OVERLAP,
+        "chunk_size": config.CHUNK_SIZE,
+        "chunk_overlap": config.CHUNK_OVERLAP,
         "generation_time_sec": round(elapsed, 2),
     }
     REPORT_PATH.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Отчет сохранен в {REPORT_PATH}")
+    print(f"Отчет сохранен в {REPORT_PATH.name}")
 
 
 if __name__ == "__main__":

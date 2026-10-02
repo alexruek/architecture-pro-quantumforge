@@ -19,7 +19,7 @@ package "src/update_index.py" as Upd {
   [2. Сканирование\nsha256 каждого файла] as Scan
   [3. Сравнение с манифестом\nновые, измененные, удаленные] as Diff
   [4. Разбиение на чанки\n1200 символов, перекрытие 100] as Chunk
-  [5. Эмбеддинги\nall-MiniLM-L6-v2, 384] as Embed
+  [5. Эмбеддинги\nmultilingual-e5-small, 384] as Embed
   [6. Обновление FAISS\nудаление старых + добавление новых] as Upsert
 }
 
