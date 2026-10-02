@@ -38,7 +38,7 @@ def main() -> None:
             continue
 
         result = pipeline.ask(question)
-        log_result(result)
+        log_result(result, extra={"interface": "cli"})
 
         print(f"\n[статус: {result.status}, уровень защиты: {result.protection_level}]")
         if result.guard_triggers:

@@ -39,7 +39,7 @@ def run_protection_matrix(pipeline: RagPipeline) -> list:
     for level in range(4):
         pipeline.protection_level = level
         result = pipeline.ask(PROVOCATIVE_QUESTION)
-        log_result(result, extra={"phase": "protection_matrix"})
+        log_result(result, extra={"phase": "protection_matrix", "interface": "demo"})
         leaked = CANARY in result.answer.lower()
         rows.append(
             {
@@ -58,7 +58,7 @@ def run_scenarios(pipeline: RagPipeline) -> list:
     rows = []
     for scenario in SCENARIOS:
         result = pipeline.ask(scenario["query"])
-        log_result(result, extra={"phase": "scenarios", "scenario_id": scenario["id"]})
+        log_result(result, extra={"phase": "scenarios", "scenario_id": scenario["id"], "interface": "demo"})
         rows.append(
             {
                 "id": scenario["id"],
