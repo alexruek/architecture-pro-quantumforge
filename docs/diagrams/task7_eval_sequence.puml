@@ -1,0 +1,77 @@
+@startuml task7_eval_sequence
+title Обработка запроса, оценка качества и точки сбоя (задание 7)
+
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam sequenceMessageAlign left
+autonumber
+
+actor "Пользователь\nили cron" as U
+participant "evaluate.py\n(золотой набор)" as E
+participant "RagPipeline\n(rag_pipeline.py)" as P
+participant "injection_guard.py" as G
+participant "Эмбеддинги\nall-MiniLM-L6-v2" as M
+database "FAISS\nfaiss_index/" as F
+participant "LLM\ngpt-4o-mini" as L
+database "logs/queries.jsonl" as Q
+database "logs/eval_results.jsonl\ndocs/task7_eval_<tag>.md" as R
+participant "analyze_logs.py\n+ kb_audit.py" as A
+
+== Подготовка прогона ==
+U -> E : python src/evaluate.py
+E -> E : разбор golden_questions.txt,\nожидание по состоянию knowledge_base/\n(removed: документ есть - ответ, нет - отказ)
+E -> P : загрузка индекса и моделей
+P -> F : FAISS.load_local
+alt Сбой: индекса нет или он поврежден
+  F --> P : исключение
+  P --> E : ошибка загрузки
+  E --> U : код выхода 2, подсказка\nupdate_index.py --full
+else Сбой: индекс пуст (0 векторов)
+  E --> U : код выхода 2, прогон остановлен
+end
+
+== Обработка одного вопроса (в цикле по набору) ==
+E -> P : ask(question)
+P -> G : find_triggers(question)
+alt признаки инъекции
+  G --> P : сработавшие правила
+  P --> E : status=blocked
+else запрос чистый
+  P -> M : embed_query(question)
+  M -> F : поиск top-k
+  F --> P : кандидаты с оценками
+  P -> P : отбросить невалидные чанки\n(пустой текст, нет source)
+  note right of P
+    Сбой: невалидный чанк.
+    Чанк не попадает в контекст,
+    счетчик invalid_chunks в ответе
+  end note
+  alt ни один кандидат не прошел порог
+    P --> E : status=refused, кандидаты и top_score
+  else есть релевантные чанки
+    P -> G : filter_chunks(чанки)
+    P -> L : промпт: system + few-shot + контекст + вопрос
+    alt Сбой генерации: таймаут, нет сети, ошибка API
+      L --> P : исключение
+      P --> E : status=error, текст ошибки
+    else ответ получен
+      L --> P : рассуждение и ответ (CoT)
+      P -> G : check_output(ответ)
+      P --> E : status=answered, источники, кандидаты
+    end
+  end
+end
+E -> Q : запись обращения: запрос, время, чанки найдены,\nдлина, успех, источники, оценки
+E -> E : оценка: ответ найден да/нет, полнота по ключевым\nсловам, источник найден, вердикт
+
+== Итог прогона ==
+E -> R : строки результатов и отчет прогона
+E --> U : код 0 или 4 (доля прошедших ниже --min-pass)
+
+== Аналитика ==
+U -> A : python src/analyze_logs.py
+A -> Q : чтение всех обращений
+A -> R : чтение прогонов baseline и gaps
+A -> A : темы без ответа, нерелевантные источники,\nподбор порога, аудит текстов базы
+A --> U : docs/task7_log_analysis.md
+@enduml
