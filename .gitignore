@@ -6,3 +6,4 @@ faiss_index/.update.lock
 logs/eval_last_report.md
 logs/eval_runs.log
 logs/cron.log
+.DS_Store
